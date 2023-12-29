@@ -45,3 +45,38 @@
 /* .grid-2 :nth-child(7n + 3) {
   grid-column: span 4 / -3;
 } */
+
+/* todo FLEX */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  counter-reset: num;
+}
+
+.flex,
+.flex * {
+  width: 25%;
+  border: 1px solid;
+  text-align: center;
+
+  flex-grow: 1;
+}
+
+.flex * {
+  background: #ddd;
+  padding: 15px;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.flex :nth-child(7n + 5) {
+  width: calc(100% / 3);
+  flex-grow: 0;
+}
+
+.flex *::before {
+  content: counter(num);
+  counter-increment: num;
+}
