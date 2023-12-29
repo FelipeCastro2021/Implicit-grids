@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 5px 2px;
+
+  max-width: 300px;
+}
+
+.grid div {
+  grid-column: span 3;
+  height: 40px;
+  background: red;
+}
+
+.grid div:nth-child(7n + 1),
+.grid div:nth-child(7n + 2),
+.grid div:nth-child(7n + 3) {
+  grid-column: span 4;
+  background: blue;
+}
+
+/* TODO GRID 2 */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 5px 2px;
+
+  max-width: 300px;
+}
+
+.grid-2 * {
+  height: 40px;
+  grid-column: span 4;
+  background-color: red;
+}
+
+.grid-2 :nth-child(7n + 1) {
+  grid-column: 3 / span 4;
+}
+
+/* .grid-2 :nth-child(7n + 3) {
+  grid-column: span 4 / -3;
+} */
